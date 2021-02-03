@@ -1,4 +1,7 @@
 <?php
+
+namespace app\model;
+
 class Connection
 {
     private static $instance;
