@@ -10,8 +10,8 @@ class Connection
     {
         if (!isset(self::$instance)) {
             self::$instance = new PDO('pgsql:host=localhost;port=54320;dbname=desafio;user=homestead;password=secret');
-        } else {
-            return self::$instance;
         }
+
+        return self::$instance;
     }
 }
