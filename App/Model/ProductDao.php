@@ -11,7 +11,7 @@ class ProductDao {
 
     }
 
-    public function update(Produto $p){
+    public function update(Product $p){
 
     }
 

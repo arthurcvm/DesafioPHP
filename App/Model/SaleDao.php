@@ -1,13 +1,15 @@
-<?
+<?php
 
 namespace App\Model;
 
+
 class SaleDao {
     public function create(Sale $s){
-        $sql = 'INSERT INTO sales(date_sale) VALUES (?)';
+        $sql = 'INSERT INTO sales(id, date_sale) VALUES (?, ?)';
 
-        $stmt = Conection::getConn()->prepare($sql);
-        $stmt->bindValue(1, $p->getDateSale());
+        $stmt = Connection::getConn()->prepare($sql);
+        $stmt->bindValue(1, $s->getId());
+        $stmt->bindValue(2, $s->getDateSale());
         $stmt->execute();
     }
 
