@@ -31,7 +31,6 @@ class SaleDao
 
     public function update(Sale $s)
     {
-
         $sql = 'UPDATE sales SET date_sale = ? WHERE id = ?';
 
         $stmt = Connection::getConn()->prepare($sql);
