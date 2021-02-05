@@ -29,11 +29,11 @@ if (isset($_POST['submitBtn'])) {
 <form action="" method="POST">
     <div class="form-row justify-content-start">
         <div class="form-group col-md-3">
-            <label for="numNotaInput">Nome</label>
+            <label for="name">Nome</label>
             <input type="text" class="form-control" id="name" name="name">
         </div>
         <div class="form-group col-md-3">
-            <label for="numNotaInput">Valor</label>
+            <label for="value">Valor</label>
             <input type="text" class="form-control" id="value" name="value">
         </div>
         <div class="form-group col-md-3">
@@ -70,7 +70,7 @@ if (isset($_POST['submitBtn'])) {
                 <tr>
                     <td><?php echo $p['name']; ?></td>
                     <td><?php echo $p['value']; ?></td>
-                    <td><?php echo $p['product_type_id']; ?></td>
+                    <td><?php echo $p['product_type']; ?></td>
                 </tr>
             <?php
             } ?>

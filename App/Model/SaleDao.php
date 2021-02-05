@@ -8,11 +8,14 @@ class SaleDao
 {
     public function create(Sale $s)
     {
-        $sql = 'INSERT INTO sales(date_sale) VALUES (?)';
+        $sql = 'INSERT INTO sales(date_sale, total) VALUES (?, ?)';
 
         $stmt = Connection::getConn()->prepare($sql);
         $stmt->bindValue(1, $s->getDateSale());
+        $stmt->bindValue(2, $s->getTotal());
         $stmt->execute();
+
+        return Connection::getConn()->lastInsertId();
     }
 
     public function read()
@@ -31,11 +34,12 @@ class SaleDao
 
     public function update(Sale $s)
     {
-        $sql = 'UPDATE sales SET date_sale = ? WHERE id = ?';
+        $sql = 'UPDATE sales SET date_sale = ?, total = ? WHERE id = ?';
 
         $stmt = Connection::getConn()->prepare($sql);
         $stmt->bindValue(1, $s->getDateSale());
-        $stmt->bindValue(2, $s->getId());
+        $stmt->bindValue(2, $s->getTotal());
+        $stmt->bindValue(3, $s->getId());
 
         $stmt->execute();
     }

@@ -26,11 +26,11 @@ if (isset($_POST['submitBtn'])) {
 <form action="" method="POST">
     <div class="form-row justify-content-start">
         <div class="form-group col-md-3">
-            <label for="numNotaInput">Nome</label>
+            <label for="name">Nome</label>
             <input type="text" class="form-control" id="name" name="name">
         </div>
         <div class="form-group col-md-3">
-            <label for="numNotaInput">Alíquota</label>
+            <label for="tax">Alíquota</label>
             <input type="text" class="form-control" id="tax" name="tax">
         </div>
         <button type="submit" style="height: 40px; margin-top: 30px;" class="btn btn-success" name="submitBtn">Cadastrar</button>

@@ -2,7 +2,7 @@
 namespace App\Model;
 
 class Sale {
-    private $id, $date_sale;
+    private $id, $date_sale, $total;
 
     public function getId() {
         return $this->id;
@@ -18,5 +18,13 @@ class Sale {
 
     public function setDateSale($date_sale){
         $this->date_sale = $date_sale;
+    }
+
+    public function getTotal() {
+        return $this->total;
+    }
+
+    public function setTotal($total){
+        $this->total = $total;
     }
 }

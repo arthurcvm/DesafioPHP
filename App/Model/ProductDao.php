@@ -4,8 +4,10 @@ namespace App\Model;
 
 use PDO;
 
-class ProductDao {
-    public function create(Product $p){
+class ProductDao
+{
+    public function create(Product $p)
+    {
         $sql = 'INSERT INTO products(name, value, product_type_id) VALUES (?, ?, ?)';
 
         $stmt = Connection::getConn()->prepare($sql);
@@ -15,8 +17,11 @@ class ProductDao {
         $stmt->execute();
     }
 
-    public function read() {
-        $sql = 'SELECT * FROM products';
+    public function read()
+    {
+        $sql = 'SELECT p.*, pt.name as product_type FROM products p 
+                left join product_types pt
+                on pt.id = p.product_type_id';
 
         $stmt = Connection::getConn()->prepare($sql);
         $stmt->execute();
@@ -28,7 +33,8 @@ class ProductDao {
         return [];
     }
 
-    public function update(Product $p){
+    public function update(Product $p)
+    {
         $sql = 'UPDATE products SET name = ?, value = ?, product_type_id = ? WHERE id = ?';
 
         $stmt = Connection::getConn()->prepare($sql);
@@ -40,7 +46,8 @@ class ProductDao {
         $stmt->execute();
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $sql = 'DELETE FROM products WHERE id = ?';
 
         $stmt = Connection::getConn()->prepare($sql);
