@@ -23,14 +23,14 @@
 
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
        <ul class="navbar-nav mr-auto">
-         <li class="nav-item active">
-           <a class="nav-link" href="#">Vendas</a>
+         <li class="nav-item">
+           <a class="nav-link" href="/">Vendas</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#">Produtos</a>
+           <a class="nav-link" href="products.php">Produtos</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#">Tipos de produtos</a>
+           <a class="nav-link" href="product_types.php">Tipos de produtos</a>
          </li>
        </ul>
      </div>
